@@ -8,34 +8,46 @@
     <link href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="./assets/javascript/game.js">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Rick and Morty Word Guess</title>
 </head>
 
-<body>
-    <!-- row 1 -->
+<body>  
+        <!-- row 1 -->
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
-            <p>Rick and Morty Word Guess Game!</p>
+            <div class="jumbotron">
+                <h1 class="display-4">Rick and Morty Word Guessing Game!</h1>
+                <p class="lead">These are the games rules typed out here.</p>
+                <hr class="my-4">
+                <p>This is where some extra hints or something funny goes.</p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Click to kill mort- errr, Play the Word Guess Game</a>
+            </div>
         </div>
     </div>
 
-    <!-- row 2 -->
+        <!-- row 2 -->
 
-    <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <p>Put Rick to the left and all the mortys left in play to the right</p>
+        <div class="row">
+            <!-- the div element with a static image of rick holding portal gun, and six different morty images 
+                that will disapear as the user guesses wrong indicating "lives" -->
+            <div class="container-fluid col-sm-12 col-md-12 col-lg-12">
+                <p>Put Rick to the left and all the mortys left in play to the right</p>
+            </div>
         </div>
-    </div>
 
-    <!-- row 3 -->
-    <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-            <p>The current word as the guesses get filled in like "_ _ _ _ _" etc...</p>
+        <!-- row 3 -->
+        <div class="row">
+            <!-- the div element holding the current word as letters fill in -->
+            <div class="container-fluid col-sm-12 col-md-6 col-lg-6">
+                <p>The current word as the guesses get filled in like "_ _ _ _ _" etc...</p>
+            </div>
+            <!-- the div element holding the already guessed wrong letters-->
+            <div class="container-fluid col-sm-12 col-md-6 col-lg-6">
+                <p>The letters guessed (wrong) already</p>
+            </div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6">
-            <p>The letters guessed (wrong) already</p>
-        </div>
-    </div>
+
 </body>
 </html>

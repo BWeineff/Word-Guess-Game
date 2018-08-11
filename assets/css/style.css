@@ -1,3 +1,17 @@
+@keyframes rotate {
+    0% {
+        opacity: 0.1;
+        transform: rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.1;
+        transform: rotate(359deg);
+    }
+}
+
 body {
     background: url(../images/rAmBackground2.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -17,4 +31,10 @@ body {
 .container-fluid {
     background: teal;
     opacity: .7;
+}
+.imgRotate {
+    animation-name:            rotate; 
+    animation-duration:        1s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }

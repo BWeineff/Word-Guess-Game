@@ -8,4 +8,13 @@ body {
 .jumbotron {
     opacity: .7;
     text-align: center;
+    padding: 0.4em 0.5em;
+    font-size: 1.2em;   
+}
+.see-through {
+    opacity: .7;
+}
+.container-fluid {
+    background: teal;
+    opacity: .7;
 }

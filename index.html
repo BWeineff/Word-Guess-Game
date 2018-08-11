@@ -7,7 +7,6 @@
 
     <link href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="./assets/javascript/game.js">
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Rick and Morty Word Guess</title>
@@ -16,38 +15,93 @@
 <body>  
         <!-- row 1 -->
     <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="col-sm-6 mx-auto">
             <div class="jumbotron">
-                <h1 class="display-4">Rick and Morty Word Guessing Game!</h1>
-                <p class="lead">These are the games rules typed out here.</p>
-                <hr class="my-4">
-                <p>This is where some extra hints or something funny goes.</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Click to kill mort- errr, Play the Word Guess Game</a>
+                <h3 class="display-6">Rick and Morty Word Guessing Game!</h3>
+                <p class="lead">Scroll down and Press any letter in the alphabet on your keyboard to start playing!</p>
+                <hr class="my-6">
+                <h6>Try to guess the current word by typing the letters on your keyboard.</h6> 
+                </br>
+                <h6>Careful, you only have 7 guesses before all of your Mortys are phased into another dimension</h6>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="text-center">
+                <h4>Enjoy some Human Music while you play!</h4>
+                <audio controls autoplay id="song">
+                    <source src="assets/rickAndMortyFakeDoors.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="winLose"> 
+        <div class="col-sm-12 col-md-12 col-lg-12 text-center"> 
+                <h4 id="wins">Wins:  </h4>
+                        
+                <h4 id="losses">Losses:  </h4>
+        </div>
+    </div> <!-- row end-->
+
 
         <!-- row 2 -->
-
+    <div class="game-container">
         <div class="row">
             <!-- the div element with a static image of rick holding portal gun, and six different morty images 
                 that will disapear as the user guesses wrong indicating "lives" -->
-            <div class="container-fluid col-sm-12 col-md-12 col-lg-12">
-                <p>Put Rick to the left and all the mortys left in play to the right</p>
+            <div id="leftSide" class="container col-sm-12 col-md-12 col-lg-6">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6 text-center see-through">
+
+                            <div class="card mx-auto" style="width: 5rem;">
+                                    <img class="card-img-top" src="./assets/images/morty1.png" alt="Morty 1">
+                            </div>
+                            <div class="card mx-auto" style="width: 5rem;">
+                                    <img class="card-img-top" src="./assets/images/morty2.png" alt="Morty 2">
+                            </div>
+                            <div class="card mx-auto" style="width: 5rem;">
+                                    <img class="card-img-top" src="./assets/images/morty3.png" alt="Morty 3">
+                            </div>
+
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6 text-center see-through">
+                            <div class="card mx-auto" style="width: 5rem;">
+                                    <img class="card-img-top" src="./assets/images/morty4.png" alt="Morty 4">
+                            </div>
+                            <div class="card mx-auto" style="width: 5rem;">
+                                    <img class="card-img-top" src="./assets/images/morty5.png" alt="Morty 5">
+                            </div>
+                            <div class="card mx-auto" style="width: 5rem;">
+                                    <img class="card-img-top" src="./assets/images/morty6.png" alt="Morty 6">
+                            </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- the div element holding the already guessed wrong letters and then the # of guesses left-->
+            <div id="rightSide" class="col-sm-12 col-md-12 col-lg-6">
+                <!-- the div element holding the current word as letters fill in -->
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h3 class="container-fluid text-center">Current Word:</h3>
+                        <h2 id="theCurrentWord" class="container-fluid text-center"> </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h4 id="guessedLetters" class="container-fluid text-center">Letters guessed so far: </h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 rem">
+                        <h4 id="remGuesses" class="container-fluid text-center">Guesses Remaining: </h4>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- row 3 -->
-        <div class="row">
-            <!-- the div element holding the current word as letters fill in -->
-            <div class="container-fluid col-sm-12 col-md-6 col-lg-6">
-                <p>The current word as the guesses get filled in like "_ _ _ _ _" etc...</p>
-            </div>
-            <!-- the div element holding the already guessed wrong letters-->
-            <div class="container-fluid col-sm-12 col-md-6 col-lg-6">
-                <p>The letters guessed (wrong) already</p>
-            </div>
-        </div>
-
+    </div>
 </body>
+
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </html>

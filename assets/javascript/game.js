@@ -30,13 +30,74 @@
      
 //all the functions
 
-    //function to start the new game
-    function newGame() {
-        currentWord = possibleWords[Math.floor(Math.random() * possibleWords.length)];
-             console.log("Word to solve for: " + currentWord); //randomly picks a word form the list
-             
-    //break apart word by the letters i think using .split
+        //function to start the new game
+        function newGame () {
+            currentWord = possibleWords[Math.floor(Math.random() * possibleWords.length)];
+        //randomly picks a word form the list
+                
+        //break apart word by the letters I using .split
+            currentWordLetters = currentWord.split("");
 
-    //then find the number of blanks "_ _ _ " to put for the unguessed answer so far 
-    //by finding the .length of the currentWord
-    };
+        //then find the number of blanks "_ _ _ " to put for the unguessed answer so far
+            numOfBlanks = currentWordLetters.length; 
+            
+            guessesLeft = 7;
+            wrongLetters = [];
+            answerDisplay = [];
+        //this is to reset the spinning images
+            if (guessesLeft = 7) {
+				document.getElementById("morty1").removeAttribute("style");
+				document.getElementById("morty2").removeAttribute("style");
+				document.getElementById("morty3").removeAttribute("style");
+				document.getElementById("morty4").removeAttribute("style");
+				document.getElementById("morty5").removeAttribute("style");
+				document.getElementById("morty6").removeAttribute("style");
+            }
+            
+            for (i = 0; i < numOfBlanks; i++) {
+                answerDisplay.push("_");
+            }
+
+    //Change HTML elements to output the current info
+            document.getElementById("theCurrentWord").innerHTML = answerDisplay.join(" ");
+            document.getElementById("remGuesses").innerHTML = "Number of Guesses Remaining: " + " " + guessesLeft;
+            document.getElementById("wins").innerHTML = "Wins: " + " " + wins;
+            document.getElementById("losses").innerHTML = "Losses: " + " " + losses;
+            
+        };
+
+        function checkLtrs(letter) {
+
+            //Check if the letter pressed is an actual letter
+            if (event.keyCode >= 65 && event.keyCode <= 90) { 
+                        //if the key pressed is a letter then
+                        //Check if the letter guessed is one of the letters in the word
+                        var correctLetter = false;
+    
+                        for ( var i = 0; i < numOfBlanks; i++) {
+                            if(currentWord[i] == letter) {
+                                correctLetter = true;
+                            }
+                        }
+    
+                        //Check where the correct letter is located on the word, then add to html
+                        if(correctLetter) {
+                            for ( var i = 0; i < numOfBlanks; i++) {
+                                if(currentWord[i] == letter) {
+                                    answerDisplay[i] = letter;
+                                }
+                            }
+                        }
+    
+                        //If the letter isn't part of the word
+                        else {
+                            wrongLtrs.push(letter);
+                            guessesLeft--
+                        }
+    
+                 //if input isnt a letter then alert       
+            } else { 
+                alert("Rick only accepts inputs of letters a - z, no funny buisness!");
+            }
+        }
+    
